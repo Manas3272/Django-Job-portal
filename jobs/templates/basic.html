@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    {% comment %} <link rel="stylesheet" href="static/stylejob.css"> {% endcomment %}
+  <title>{% block title %}{% endblock %}</title>
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+.header ul.navbar-nav {
+    width: 100%;
+    /* text-align: end; */
+    display: flex;
+    place-content: end;
+}
+.header {
+  background: #fff;
+  display: block;
+  position: relative;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 9;
+}
+.header ul.navbar-nav li {
+    padding: 0px 15px;
+}
+
+.slider {
+    background: url(/../../static/slide.jpg);
+    width: 100%;
+    height: 600px;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    place-content: center;
+    align-items: center;
+}
+.slider h1{
+    font-size: 80px;
+    font-weight: 700;
+    width: 50%;
+    font-family: 'Poppins', sans-serif;
+}
+.slide img {
+    width: 100%;
+    object-fit: cover;
+}
+
+   * {
+      font-family: 'Nunito', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-transform: capitalize;
+      outline: none;
+      border: none;
+      text-decoration: none;
+      transition: all .2s linear;
+      color: #000000;
+
+
+  } 
+
+    .navbar {
+      background-color: #ffffff;
+    }
+
+
+    .head1 {
+      color: #ffa500;
+      font-size: 30px;
+      font-weight: bold;
+      height: 69px;
+    }
+
+
+    .head2 {
+      color: #000000;
+      font-size: 30px;
+      font-weight: bold;
+    }
+      
+    .nav-link:hover {
+        background-color: #ffa500;
+        font-size: 100%;
+        color: red;
+      }
+    a{
+        text-align: justify;
+        text-justify: inter-word; 
+        color: inherit;
+        text-decoration: none;
+        
+    }
+    button {
+      background-color: #ffa500;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      font-weight: 700;
+      font-family: 'Poppins';
+    }
+    button:hover{
+      background-color: #ffffff
+    }
+    button:hover {
+      background-color: #ffffff;
+      color: #000;
+  }
+   .slider p{
+      font-family: 'Poppins', sans-serif;
+      font-size: 19px;
+      width: 55%;
+    }
+    .slider-last h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 50px;
+      font-weight: 700;
+      line-height: 60px;
+      width: 80%;
+      margin: 0 auto;
+      color: white;
+  }
+  .slider-last {
+    background: orange;
+    text-align: center;
+    padding:5pc 0;
+}
+.slider-last button {
+  background: #fff;
+  color: #000;
+  border-radius: 40px;
+  margin: 3pc 10px 0;
+}
+.footer p {
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.4px;
+  line-height: 30px;
+  padding: 10px 0;
+}
+
+.footer span {
+  color: #fff;
+}
+
+.footer .btn-link {
+  display: block;
+  font-weight: 400;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: start;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.4px;
+  line-height: 30px;
+}
+.copyright p {
+  font-family: 'Poppins', sans-serif;
+  color: #e3e3e3;
+}
+.login-page .row {
+  margin: 0;
+  height: 100%;
+
+}
+.login-page {
+  height: 600px;
+}
+.slide {
+  padding: 0;
+}
+.slide img {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+.login-page h6{
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  text-align:center;
+
+}
+.login-page h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 29px;
+  font-weight: 700;
+  padding: 0 0 10px;
+}
+.login-page input {
+  height: 45px;
+  background: #f7f5f5;
+  border: 1px solid #ddd;
+}
+.login-page label.form-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+  margin-bottom: 4px;
+  padding-top: 10px;
+}
+.work-content p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  color: #707070;
+}
+.work-content h5 {
+  font-weight: 500;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+}
+table th {
+  background: #40bf5b !important;
+  height: 40px;
+  color: #fff;
+  font-weight: 400;
+}
+table tr {
+  height: 50px;
+}
+.home1-work-process .single-work-process {
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  background-color: rgba(0,167,172,.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  position: relative;
+  margin: 0 auto 20px;
+  transition: .35s;
+  box-shadow: 0px 0px 5px 5px #f3fbfb;
+}
+.home1-work-process.steps-four {
+  padding: 4pc 0 4pc;
+  height:auto !important;
+}
+.home1-work-process.mb-120 {
+  height: 444px;
+}
+.iconfont {
+  font-size: 40px;
+  margin-bottom: 3px;
+}
+.section-title1 h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffa500;
+  font-family: var(--font-exo2);
+  line-height: 48px;
+  margin-bottom: 20px;
+  margin-top: -10px;
+}
+.section-title1 h2 {
+  font-size: 40px;
+  font-family: 'Poppins', sans-serif;
+  padding-bottom: 10px;
+  margin-bottom: 0;
+}
+.section-title1 h2 span {
+  font-size: 40px;
+  font-family: 'Poppins', sans-serif;
+}
+.section-title1 p{
+  font-family: 'Poppins', sans-serif;
+  padding-bottom: 30px;
+
+}
+.nav-link.active {
+  background-color: #ffa500;
+  color: white;
+}
+  </style>
+  {% block css %}
+  {% endblock %}
+</head>
+
+<body>
+  <div class= "header">
+
+  <nav class="container navbar navbar-expand-lg sticky-top navbar-dark sticky-top justify-content-center">
+      <a class="navbar-brand" href="/"><span class="head1">Job</span><span class="head2">Portal</span></a>
+      {% comment %} <a class="navbar-brand" href="#"><span class="head1">Job</span><span class="head2">Portal</span></a> {% endcomment %}
+      <div class="container-fluid w-100 align-items-end ">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          {% if not request.user.is_authenticated %}
+          <li class="nav-item">
+            <a style="color:black;" class="nav-link {% block home %} {% endblock %}" aria-current="page" href="/"><b>Home</b></a>
+          </li>
+          <li class="nav-item">
+            <a style="color:black;" class="nav-link {% block user_login %} {% endblock %}" href="/user_login/"><b>Find a Job</b></a>
+          </li>
+          <li class="nav-item">
+            <a style="color:black;" class="nav-link {% block admin_login %} {% endblock %}" href="/admin_login/"><b>Admin Login</b></a>
+          </li>
+          <li class="nav-item">
+            <a style="color:black;" class="nav-link {% block company_login %} {% endblock %}" href="/company_login/"><b>Post a Job</b></a>
+          </li>
+
+          {% else %}
+          <li class="nav-item">
+            <a style="color:black;"class="nav-link active" href="/logout/"><b>Logout</b></a>
+          </li>
+        </ul>
+        {% endif %}
+      </div>
+    </div>
+  </nav>
+</div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  {% block body %}
+  {% endblock %}
+</body>
+{% block js %}
+{% endblock %}
+
+</html>

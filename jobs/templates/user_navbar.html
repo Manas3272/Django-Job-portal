@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <title>{% block title %}{% endblock %}</title>
+  <style>
+    .navbar {
+      background-color: #4f868c;
+    }
+
+    .head1 {
+      color: #ffa500;
+      font-size: 30px;
+      font-weight: bold;
+      height: 69px;
+    }
+
+
+    .head2 {
+      color: #000000;
+      font-size: 30px;
+      font-weight: bold;
+    }
+    .nav-link:hover {
+      background-color: #00a7ac;
+    }
+    .example {
+      display: inline-block;
+      margin-left: 864px;
+      margin-bottom: 20px;
+      margin-top: -17px;
+  }
+  div#example_paginate {
+    visibility: hidden;
+}
+div#example_info {
+  visibility: hidden;
+}
+table#example {
+  margin-top: 19px;
+}
+  </style>
+  {% block css %}
+  {% endblock %}
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background:white;">
+    <div class="container">
+      {% comment %} <a class="navbar-brand" href="/"><span class="head1">Tech</span><span class="head2">Vidvan</span></a> {% endcomment %}
+      <a class="navbar-brand" href="#"><span class="head1">Job</span><span class="head2">Portal</span></a>
+      <div class="container w-100">
+       <div class="menus "  style="display:flex;">
+        <a class="navbar-brand" style="font-weight: bold;padding-left: 30px; color:#00a7ac;"
+        href="#">Welcome {{request.user.get_full_name}}</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" 
+        style="place-content: end;">
+       
+          <ul class="navbar-nav ">
+            <li class="nav-item">
+              <a class="nav-link {% block home %}{% endblock %}" style="color:black;" aria-current="page" href="/user_homepage/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% block job_list %}{% endblock %}"style="color:black;" href="/all_jobs/">Job List</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color:black;" href="/logout/">Logout</a>
+            </li>
+          </ul>
+         
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      </div>
+     
+      </div>
+    </div>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+
+    
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+  {% comment %} <script src="https://cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script> {% endcomment %}
+  {% comment %} <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script> {% endcomment %}
+
+
+  {% block body %}
+  {% endblock %}
+</body>
+{% block js %}
+<script>
+  $(document).ready(function () {
+    $('#example').DataTable({
+      dom: 'Bfrtip',
+      buttons: [
+        
+      ]
+    });
+  });
+</script>
+{% endblock %}
+
+</html>
+
+</html>

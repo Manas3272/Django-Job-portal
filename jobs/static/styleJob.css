@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+.header ul.navbar-nav {
+    width: 100%;
+    /* text-align: end; */
+    display: flex;
+    place-content: end;
+}
+.header ul.navbar-nav li {
+    padding: 0px 15px;
+}
+
+.slider {
+    background: url(/../../static/slide.jpg);
+    width: 100%;
+    height: 600px;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    place-content: center;
+    align-items: center;
+}
+.slider h1{
+    font-size: 80px;
+    font-weight: 700;
+    width: 50%;
+    font-family: 'Poppins', sans-serif;
+}
+.slide img {
+    width: 100%;
+    object-fit: cover;
+}
+.login-page h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+.login-page h1 a.btn {
+    background: transparent !important;
+    color: orange !important;
+    text-decoration: underline;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 0 6px;
+    position: relative;
+    top: -2px;
+}

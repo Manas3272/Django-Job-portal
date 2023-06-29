@@ -1,0 +1,19 @@
+{% extends 'basic.html' %}
+
+{% block title %} {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+
+{% block content %}
+  <h2>Reset Password</h2>
+  <form method="POST" action="{% url 'password_reset_confirm' uidb64=uid token=token %}">
+    {% csrf_token %}
+    <p>Please enter your new password below:</p>
+    <label for="id_new_password1">New Password:</label>
+    <input type="password" name="new_password1" id="id_new_password1" required>
+    <label for="id_new_password2">Confirm New Password:</label>
+    <input type="password" name="new_password2" id="id_new_password2" required>
+    <button type="submit">Reset Password</button>
+  </form>
+{% endblock %}
